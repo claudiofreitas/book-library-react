@@ -3,5 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Claudio Freitas <claudiofreitas3@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
 }
