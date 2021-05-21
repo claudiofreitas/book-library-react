@@ -1,0 +1,7 @@
+{
+  "name": "book-library-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Claudio Freitas <claudiofreitas3@gmail.com>",
+  "license": "MIT"
+}
