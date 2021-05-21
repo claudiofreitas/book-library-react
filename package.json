@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Claudio Freitas <claudiofreitas3@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "parcel src/index.html"
+  },
   "dependencies": {
     "parcel-bundler": "^1.12.5"
   }
