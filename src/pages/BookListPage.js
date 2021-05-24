@@ -1,17 +1,25 @@
 import React from 'react';
 
-const BookListPage = () => {
+const BookListPage = (props) => {
+  const { booklist } = props;
   return (
     <div>
+      Books:
       <table>
-        <tr>
-          <td>Book Title</td>
-          <td>Author</td>
-        </tr>
-        <tr>
-          <td>Refactoring</td>
-          <td>Martin Fowler, Kent Beck</td>
-        </tr>
+        <thead>
+          <tr>
+            <td>Title</td>
+            <td>Author</td>
+          </tr>
+        </thead>
+        <tbody>
+          {booklist.map((book) => (
+            <tr key={book.id}>
+              <td>{book.title}</td>
+              <td>{book.author}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   );
