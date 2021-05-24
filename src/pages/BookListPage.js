@@ -83,7 +83,7 @@ const BookListPage = ({ booklist, checkIn, checkOut }) => {
   return (
     <div>
       <h1>Books</h1>
-      <Table dataSource={tableData} columns={columns} />
+      <Table dataSource={tableData} columns={columns} size="small"/>
     </div>
   );
 };
