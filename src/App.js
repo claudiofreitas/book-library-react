@@ -22,7 +22,7 @@ const App = () => {
       title: 'The 4-Hour Chef',
       author: 'Tim Ferriss',
       category: 'Learning',
-      status: 'ON_SHELF'
+      status: 'TAKEN'
     },
   ];
   return (
