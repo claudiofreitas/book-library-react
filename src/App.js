@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BookListPage from './pages/BookListPage';
 
 const App = () => {
-  const bookList = [
+  const defaultBooklist = [
     {
       id: 1,
       title: 'Refactoring',
@@ -26,23 +26,39 @@ const App = () => {
     },
   ];
 
+  const [booklist, setBooklist] = useState(defaultBooklist);
+
   const checkIn = (book) => {
-    const bookIndex = bookList.findIndex(
-      (listElement) => listElement.id === book.id
-    );
-    bookList[bookIndex].status = 'ON_SHELF';
+    const newBooklist = booklist.map((currentListBook) => {
+      if (currentListBook.id === book.id) {
+        return {
+          ...book,
+          status: 'ON_SHELF',
+        };
+      } else {
+        return currentListBook;
+      }
+    });
+    setBooklist(newBooklist);
   };
 
   const checkOut = (book) => {
-    const bookIndex = bookList.findIndex(
-      (listElement) => listElement.id === book.id
-    );
-    bookList[bookIndex].status = 'TAKEN';
+    const newBooklist = booklist.map((currentListBook) => {
+      if (currentListBook.id === book.id) {
+        return {
+          ...book,
+          status: 'TAKEN',
+        };
+      } else {
+        return currentListBook;
+      }
+    });
+    setBooklist(newBooklist);
   };
 
   return (
     <div>
-      <BookListPage booklist={bookList} checkIn={checkIn} checkOut={checkOut} />
+      <BookListPage booklist={booklist} checkIn={checkIn} checkOut={checkOut} />
     </div>
   );
 };
