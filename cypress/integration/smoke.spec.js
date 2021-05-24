@@ -1,5 +1,5 @@
 describe('Smoke Test', () => {
-  it('Makes sure the welcome message comes up', () => {
-    cy.visit('http://localhost:1234').contains('Hello, World!');
+  it('Can visit the homepage', () => {
+    cy.visit('http://localhost:1234');
   });
 });

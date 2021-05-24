@@ -1,7 +1,12 @@
 import React from 'react';
+import BookListPage from './pages/BookListPage';
 
 const App = () => {
-  return <div>Hello, World!</div>;
+  return (
+    <div>
+      <BookListPage />
+    </div>
+  );
 };
 
 export default App;

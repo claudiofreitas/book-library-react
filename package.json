@@ -8,10 +8,11 @@
     "dev": "parcel src/index.html",
     "format": "prettier --write \"src/**/*.{js,jsx}\" \"test/**/*.js\" \"cypress/integration/**/*.js\"",
     "lint": "eslint src/**/*.js test/**/*.js cypress/integration/**/*.js",
-    "e2e": "cypress open",
+    "e2e": "cypress run --headless --config video=false,defaultCommandTimeout=500",
     "unit": "jest test/.*.spec.js"
   },
   "dependencies": {
+    "pages": "^0.0.16",
     "parcel-bundler": "^1.12.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
