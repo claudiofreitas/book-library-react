@@ -3,7 +3,7 @@ import React from 'react';
 const BookListPage = ({ booklist, checkIn, checkOut }) => {
   return (
     <div>
-      Books:
+      <h1>Books</h1>
       <table>
         <thead>
           <tr>
