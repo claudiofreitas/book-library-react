@@ -2,7 +2,7 @@ import React from 'react';
 import BookListPage from './pages/BookListPage';
 
 const App = () => {
-  const fakeBookList = [
+  const bookList = [
     {
       id: 1,
       title: 'Refactoring',
@@ -15,19 +15,34 @@ const App = () => {
       title: 'Clean Code',
       author: 'Robert C Martin',
       category: 'Programming',
-      status: 'ON_SHELF'
+      status: 'ON_SHELF',
     },
     {
       id: 3,
       title: 'The 4-Hour Chef',
       author: 'Tim Ferriss',
       category: 'Learning',
-      status: 'TAKEN'
+      status: 'TAKEN',
     },
   ];
+
+  const checkIn = (book) => {
+    const bookIndex = bookList.findIndex(
+      (listElement) => listElement.id === book.id
+    );
+    bookList[bookIndex].status = 'ON_SHELF';
+  };
+
+  const checkOut = (book) => {
+    const bookIndex = bookList.findIndex(
+      (listElement) => listElement.id === book.id
+    );
+    bookList[bookIndex].status = 'TAKEN';
+  };
+
   return (
     <div>
-      <BookListPage booklist={fakeBookList} />
+      <BookListPage booklist={bookList} checkIn={checkIn} checkOut={checkOut} />
     </div>
   );
 };
