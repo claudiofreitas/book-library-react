@@ -12,6 +12,8 @@
     "unit": "jest test/.*.spec.js"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.6.2",
+    "antd": "^4.15.6",
     "pages": "^0.0.16",
     "parcel-bundler": "^1.12.5",
     "react": "^17.0.2",

@@ -29,6 +29,7 @@ const App = () => {
   const [booklist, setBooklist] = useState(defaultBooklist);
 
   const checkIn = (book) => {
+    console.log('checkin')
     const newBooklist = booklist.map((currentListBook) => {
       if (currentListBook.id === book.id) {
         return {
