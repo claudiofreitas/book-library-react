@@ -3,8 +3,8 @@ import { Button, Table, Tooltip } from 'antd';
 import 'antd/dist/antd.css';
 import Icon, { LoginOutlined, LogoutOutlined } from '@ant-design/icons';
 
-const BookListPage = ({ booklist, checkIn, checkOut }) => {
-  const tableData = booklist.map((book) => {
+const BookListPage = ({ booklist, checkIn, checkOut }: any) => {
+  const tableData = booklist.map((book: any) => {
     return {
       ...book,
       key: book.id,
@@ -30,7 +30,7 @@ const BookListPage = ({ booklist, checkIn, checkOut }) => {
       title: 'Status',
       key: 'status',
       dataIndex: 'status',
-      render: (status, record) => {
+      render: (status: any, record: any) => {
         const BookSvg = () => (
           <svg
             aria-hidden="true"
@@ -50,10 +50,14 @@ const BookListPage = ({ booklist, checkIn, checkOut }) => {
             />
           </svg>
         );
-        const BookIcon = (props) => <Icon component={BookSvg} {...props} />;
+        const BookIcon = (props: any) => (
+          <Icon component={BookSvg} {...props} />
+        );
         return (
           <Tooltip title={record.status === 'ON_SHELF' ? 'Available' : 'Taken'}>
-            <BookIcon style={{ color: record.status === 'ON_SHELF' ? 'green' : 'gray' }} />
+            <BookIcon
+              style={{ color: record.status === 'ON_SHELF' ? 'green' : 'gray' }}
+            />
           </Tooltip>
         );
       },
@@ -61,19 +65,29 @@ const BookListPage = ({ booklist, checkIn, checkOut }) => {
     {
       title: 'Action',
       key: 'action',
-      render: (text, book) => {
-        console.log('text', text);
-        console.log('book', book);
+      render: (_text: any, book: any) => {
         if (book.status === 'TAKEN') {
           return (
             <Tooltip title="Check In">
-              <Button icon={<LoginOutlined />} type="primary" onClick={(e) => checkIn(book)}>Check In</Button>
+              <Button
+                icon={<LoginOutlined />}
+                type="primary"
+                onClick={(_e) => checkIn(book)}
+              >
+                Check In
+              </Button>
             </Tooltip>
           );
         } else {
           return (
             <Tooltip title="Check Out">
-              <Button icon={<LogoutOutlined />} type="primary" onClick={(e) => checkOut(book)} >Check Out</Button>
+              <Button
+                icon={<LogoutOutlined />}
+                type="primary"
+                onClick={(_e) => checkOut(book)}
+              >
+                Check Out
+              </Button>
             </Tooltip>
           );
         }
@@ -83,7 +97,7 @@ const BookListPage = ({ booklist, checkIn, checkOut }) => {
   return (
     <div>
       <h1>Books</h1>
-      <Table dataSource={tableData} columns={columns} size="small"/>
+      <Table dataSource={tableData} columns={columns} size="small" />
     </div>
   );
 };
