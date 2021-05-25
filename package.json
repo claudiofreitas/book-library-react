@@ -9,7 +9,7 @@
     "format": "prettier --no-error-on-unmatched-pattern --write \"src/**/*.{js,jsx,ts,tsx}\" \"test/**/*.{js,jsx,ts,tsx}\" \"cypress/integration/**/*.{js,jsx,ts,tsx}\"",
     "lint": "eslint --no-error-on-unmatched-pattern src/**/*.{js,jsx,ts,tsx} test/**/*.{js,jsx,ts,tsx} cypress/integration/**/*.{js,jsx,ts,tsx}",
     "e2e": "cypress run --headless --config video=false,defaultCommandTimeout=500",
-    "unit": "jest test/.*.spec.js"
+    "unit": "jest test/.*.spec.ts"
   },
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
