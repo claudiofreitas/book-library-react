@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Table, Tooltip } from 'antd';
 import 'antd/dist/antd.css';
 import Icon, { LoginOutlined, LogoutOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
 
 const BookListPage = ({ booklist, checkIn, checkOut }: any) => {
   const tableData = booklist.map((book: any) => {
@@ -97,6 +98,7 @@ const BookListPage = ({ booklist, checkIn, checkOut }: any) => {
   return (
     <div>
       <h1>Books</h1>
+      <Link to="/books/add">Add new book</Link>
       <Table dataSource={tableData} columns={columns} size="small" />
     </div>
   );
